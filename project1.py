@@ -22,7 +22,8 @@ try:
         title=soup.title.string.strip()
     else:
         title="No Title Found"
-        
+
+
     content = soup.find("main")
     if content is None:
         content = soup.find("article")
@@ -54,3 +55,8 @@ try:
 except Exception as e:
     print("Error fetching the page:", e)
     sys.exit()
+
+print("PAGE TITLE",title)
+print("BODY PART",clean_body)
+for i in urls:
+        print(i,"\n")
