@@ -8,6 +8,8 @@ if len(sys.argv) < 2:
     sys.exit()
 
 url = sys.argv[1]
+if not url.startswith("http"):
+    url = "https://" + url
 
 try:
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
